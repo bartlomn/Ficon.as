@@ -4,7 +4,7 @@ package com.ficon {
 
   public class IconicStroke extends Ficon {
     [Embed(source="/../assets/Iconic-Stroke.otf", fontName="IconicStroke", mimeType="application/x-font",
-    embedAsCFF="true", fontStyle="normal", fontWeight="normal", unicodeRange="U+0023-E079")]
+    embedAsCFF="true", fontStyle="normal", fontWeight="normal")]
     private static var asset:Class;
 
     private static var fontName:String = "IconicStroke";
@@ -83,7 +83,7 @@ package com.ficon {
     }
     
     public static function key_fill(options:Object = null):FiconSprite {
-      return createIcon(fontName, "\u26bf", options);
+      return createIcon(fontName, "\uF003", options);
     }
     
     public static function rain(options:Object = null):FiconSprite {

@@ -4,7 +4,7 @@ package com.ficon {
 
   public class FontAwesome extends Ficon {
     [Embed(source="/../assets/FontAwesome-Regular.otf", fontName="FontAwesome", mimeType="application/x-font",
-    embedAsCFF="true", fontStyle="normal", fontWeight="normal", unicodeRange="U+F000-F0EA,U+F200")]
+    embedAsCFF="true", fontStyle="normal", fontWeight="normal")]
     private static var asset:Class;
 
     private static var fontName:String = "FontAwesome";
@@ -507,7 +507,7 @@ package com.ficon {
     }
     
     public static function key(options:Object = null):FiconSprite {
-      return createIcon(fontName, "\uf084", options);
+      return createIcon(fontName,"\uF003", options);
     }
     
     public static function cogs(options:Object = null):FiconSprite {
@@ -847,7 +847,7 @@ package com.ficon {
     }
     
     public static function user_md(options:Object = null):FiconSprite {
-      return createIcon(fontName, "\uf200", options);
+      return createIcon(fontName, "\uF0F0", options);
     }
     
   }
