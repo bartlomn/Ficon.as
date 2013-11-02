@@ -3,7 +3,7 @@ package com.ficon {
   import com.ficon.FiconSprite;
 
   public class FontAwesome extends Ficon {
-    [Embed(source="/assets/fontawesome-webfont.ttf", fontName="FontAwesome", mimeType="application/x-font-truetype",
+    [Embed(source="/../assets/FontAwesome-Regular.otf", fontName="FontAwesome", mimeType="application/x-font",
     embedAsCFF="true", fontStyle="normal", fontWeight="normal", unicodeRange="U+F000-F0EA,U+F200")]
     private static var asset:Class;
 

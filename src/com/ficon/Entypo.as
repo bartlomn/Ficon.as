@@ -3,7 +3,7 @@ package com.ficon {
   import com.ficon.FiconSprite;
 
   public class Entypo extends Ficon {
-    [Embed(source="/assets/entypo-webfont.ttf", fontName="Entypo", mimeType="application/x-font-truetype",
+    [Embed(source="/../assets/Entypo-Regular.otf", fontName="Entypo", mimeType="application/x-font",
     embedAsCFF="true", fontStyle="normal", fontWeight="normal", unicodeRange="U+0021-00F6")]
     private static var asset:Class;
 

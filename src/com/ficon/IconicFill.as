@@ -3,7 +3,7 @@ package com.ficon {
   import com.ficon.FiconSprite;
 
   public class IconicFill extends Ficon {
-    [Embed(source="/assets/iconic_fill.ttf", fontName="IconicFill", mimeType="application/x-font-truetype",
+    [Embed(source="/../assets/Iconic-Fill.otf", fontName="IconicFill", mimeType="application/x-font",
     embedAsCFF="true", fontStyle="normal", fontWeight="normal", unicodeRange="U+0023-E079")]
     private static var asset:Class;
 
