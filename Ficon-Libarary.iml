@@ -4,6 +4,11 @@
     <configurations>
       <configuration name="Ficon-Libarary" output-type="Library" output-file="Ficon-Libarary.swc" output-folder="$MODULE_DIR$/bin">
         <dependencies target-player="11.8">
+          <entries>
+            <entry module-name="TweenMax-AS3-Library" build-configuration-name="TweenMax-AS3-Library">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
           <sdk name="4.10.0 FP 11.8 AIR 3.8 en_US" />
         </dependencies>
         <compiler-options>
@@ -28,6 +33,7 @@
     <orderEntry type="library" exported="" name="flex_libs" level="project" />
     <orderEntry type="library" exported="" name="livecycle-libs" level="project" />
     <orderEntry type="library" exported="" name="libs" level="project" />
+    <orderEntry type="module" module-name="TweenMax-AS3-Library" exported="" />
   </component>
 </module>
 

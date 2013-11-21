@@ -9,6 +9,7 @@
 package com.bnowak.integration.ficon
 {
 import com.ficon.FiconSprite;
+import com.greensock.TweenMax;
 
 import spark.components.Group;
 import spark.layouts.HorizontalLayout;
@@ -37,6 +38,38 @@ public class UIIcon extends Group
    {
       super();
    }
+
+   /**
+    *  @private
+    */
+   private var _iconColor:uint;
+
+   /**
+    *  @private
+    */
+   private var _iconColorDirty:Boolean;
+
+   /**
+    *  icon color
+    */
+   public function get iconColor():uint
+   {
+      return _iconColor;
+   }
+
+   /**
+    *  icon color
+    */
+   public function set iconColor(value:uint):void
+   {
+      if( value != _iconColor )
+      {
+         _iconColor = value;
+         _iconColorDirty = true;
+         invalidateDisplayList();
+      }
+   }
+
 
    /**
     *  @private
@@ -79,7 +112,12 @@ public class UIIcon extends Group
       {
          _ficon.height = unscaledHeight;
          _ficon.y = unscaledHeight / - 5;
+         if( _iconColorDirty )
+         {
+            TweenMax.to( this, .1, {tint: iconColor});
+         }
       }
+
    }
 }
 }
