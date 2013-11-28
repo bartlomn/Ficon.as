@@ -18,9 +18,36 @@ public class UIIcon extends Group
 {
 
    /**
+    *  @private
+    */
+   private var _iconMethod:Function;
+
+   /**
+    *  @private
+    */
+   private var _iconMethodDirty:Boolean;
+
+   /**
     *  Reference to the static method of the given icon library
     */
-   public var iconMethod : Function;
+   public function get iconMethod():Function
+   {
+      return _iconMethod;
+   }
+
+   /**
+    *  @private
+    */
+   public function set iconMethod( value:Function ):void
+   {
+      if( _iconMethod != value )
+      {
+         _iconMethod = value;
+         _iconMethodDirty = true;
+         invalidateProperties();
+      }
+   }
+
    /**
     *  icon properties object
     */
@@ -92,13 +119,17 @@ public class UIIcon extends Group
    /**
     *  @private
     */
-   override protected function createChildren() : void
+   override protected function commitProperties():void
    {
-      super.createChildren();
-      if ( !_ficon && iconMethod )
+      super.commitProperties();
+      if( _iconMethodDirty )
       {
-         _ficon = iconMethod.call( null, iconProperties );
-         addElement( _ficon );
+         if ( !_ficon && iconMethod != null )
+         {
+            _ficon = iconMethod.call( null, iconProperties );
+            addElement( _ficon );
+            invalidateDisplayList();
+         }
       }
    }
 
