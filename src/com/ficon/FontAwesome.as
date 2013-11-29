@@ -10,6 +10,14 @@ package com.ficon {
     private static var fontName:String = "FontAwesome";
 
     
+    public static function code_fork(options:Object = null):FiconSprite {
+      return createIcon(fontName, "\uf126", options);
+    }
+
+    public static function code(options:Object = null):FiconSprite {
+      return createIcon(fontName, "\uf121", options);
+    }
+
     public static function stethoscope(options:Object = null):FiconSprite {
       return createIcon(fontName, "\uf0f1", options);
     }
