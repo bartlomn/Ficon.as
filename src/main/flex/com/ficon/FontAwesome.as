@@ -1,9 +1,8 @@
 package com.ficon {
-  import com.ficon.Ficon;
-  import com.ficon.FiconSprite;
 
-  public class FontAwesome extends Ficon {
-    [Embed(source="/../assets/FontAwesome-Regular.otf", fontName="FontAwesome", mimeType="application/x-font",
+public class FontAwesome extends Ficon {
+
+    [Embed(source="/FontAwesome-Regular.otf", fontName="FontAwesome", mimeType="application/x-font",
     embedAsCFF="true", fontStyle="normal", fontWeight="normal")]
     private static var asset:Class;
 

@@ -3,7 +3,7 @@ package com.ficon {
   import com.ficon.FiconSprite;
 
   public class IconicStroke extends Ficon {
-    [Embed(source="/../assets/Iconic-Stroke.otf", fontName="IconicStroke", mimeType="application/x-font",
+    [Embed(source="/Iconic-Stroke.otf", fontName="IconicStroke", mimeType="application/x-font",
     embedAsCFF="true", fontStyle="normal", fontWeight="normal")]
     private static var asset:Class;
 
