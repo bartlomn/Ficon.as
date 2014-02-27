@@ -146,6 +146,7 @@ public class UIIcon extends Group
          if( _iconColorDirty )
          {
             TweenMax.to( this, .1, {tint: iconColor});
+            _iconColorDirty = false;
          }
       }
 
