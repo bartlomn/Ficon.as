@@ -70,9 +70,9 @@
          <type>pom</type>
       </dependency>
       <dependency>
-         <groupId>com.greensock.tweenmax</groupId>
-         <artifactId>tweenmax-as3-library</artifactId>
-         <version>12.1.0</version>
+         <groupId>org.casalib</groupId>
+         <artifactId>Casalib-AS3-Library</artifactId>
+         <version>1.4.1-RELEASE</version>
          <type>swc</type>
       </dependency>
    </dependencies>

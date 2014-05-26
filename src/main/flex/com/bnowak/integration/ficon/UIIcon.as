@@ -1,5 +1,4 @@
 /**
- * Fortrus Mobius v2.0
  * User: Bart
  * Date: 02/11/2013
  * Time: 18:59
@@ -9,10 +8,8 @@
 package com.bnowak.integration.ficon
 {
 import com.ficon.FiconSprite;
-import com.greensock.TweenMax;
 
 import spark.components.Group;
-import spark.layouts.HorizontalLayout;
 
 public class UIIcon extends Group
 {
@@ -58,6 +55,7 @@ public class UIIcon extends Group
     */
    private var _ficon : FiconSprite;
 
+
    /**
     *  Constructor
     */
@@ -66,15 +64,11 @@ public class UIIcon extends Group
       super();
    }
 
-   /**
-    *  @private
-    */
-   private var _iconColor:uint;
 
    /**
     *  @private
     */
-   private var _iconColorDirty:Boolean;
+   private var _iconColor:uint;
 
    /**
     *  icon color
@@ -92,7 +86,6 @@ public class UIIcon extends Group
       if( value != _iconColor )
       {
          _iconColor = value;
-         _iconColorDirty = true;
          invalidateDisplayList();
       }
    }
@@ -124,12 +117,14 @@ public class UIIcon extends Group
       super.commitProperties();
       if( _iconMethodDirty )
       {
-         if ( !_ficon && iconMethod != null )
+         if( _ficon && containsElement( _ficon ))
+            removeElement( _ficon );
+         if ( iconMethod != null )
          {
             _ficon = iconMethod.call( null, iconProperties );
             addElement( _ficon );
-            invalidateDisplayList();
          }
+         invalidateDisplayList();
       }
    }
 
@@ -141,13 +136,9 @@ public class UIIcon extends Group
       super.updateDisplayList( unscaledWidth, unscaledHeight );
       if ( _ficon )
       {
-         _ficon.height = unscaledHeight;
-         _ficon.y = unscaledHeight / - 5;
-         if( _iconColorDirty )
-         {
-            TweenMax.to( this, .1, {tint: iconColor});
-            _iconColorDirty = false;
-         }
+         _ficon.setLayoutBoundsSize( unscaledHeight, unscaledHeight );
+         if( !isNaN( iconColor ));
+            _ficon.color = iconColor;
       }
 
    }

@@ -1,11 +1,9 @@
 package com.ficon {
-  import flash.utils.*;
-  import com.ficon.FiconSprite;
-  import flash.text.engine.*;
+import flash.text.engine.*;
 
-  public class Ficon {
+public class Ficon {
     private static var glyphsUsed:Object = {};
-    public static var debug:Boolean = true;
+    public static var debug:Boolean = false;
 
     public static function createIcon(fontName:String, character:String, options:Object = null):FiconSprite {
       var fd:FontDescription = new FontDescription(fontName, "normal", "normal", FontLookup.EMBEDDED_CFF); 
@@ -19,6 +17,7 @@ package com.ficon {
 
       var textElement:TextElement = new TextElement(character, format);
       var textBlock:TextBlock = new TextBlock();
+       textBlock.applyNonLinearFontScaling = true;
       textBlock.content = textElement; 
          
       var icon:TextLine = textBlock.createTextLine();
