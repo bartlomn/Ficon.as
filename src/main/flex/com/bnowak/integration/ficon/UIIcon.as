@@ -137,7 +137,7 @@ public class UIIcon extends Group
       if ( _ficon )
       {
          _ficon.setLayoutBoundsSize( unscaledHeight, unscaledHeight );
-         if( !isNaN( iconColor ));
+         if( !isNaN( iconColor ))
             _ficon.color = iconColor;
       }
 
